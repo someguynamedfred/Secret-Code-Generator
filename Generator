@@ -1,0 +1,47 @@
+strletter = "abcdefghijklmnopqrstuvwxyz"
+
+letter_list_1 = []
+
+letter_list_2 = []
+
+ 
+
+def letters_to_list(letter_list):
+
+    for letter in letter_list:
+
+        letter_list_1.append(letter)
+
+        letter_list_2.insert(0, letter)
+
+ 
+
+def secret_code(unencrypted_str):
+
+    encrypted_list = []
+
+    for letter in unencrypted_str:
+
+        if letter != " ":
+
+                n = letter_list_1.index(letter)
+
+                encrypted_list.append(letter_list_2[n])
+
+        else:
+
+            encrypted_list.append(letter)
+
+    return "".join(encrypted_list)
+
+ 
+
+letters_to_list(strletter)
+
+ 
+
+print(secret_code("bling"))
+
+print(secret_code("cheech and chong"))
+
+print(secret_code("i dont understand why they want to send me to the navy"))
